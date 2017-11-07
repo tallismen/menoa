@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">NoodAPP</string>
+
+    <!--  Alert Dialogs  -->
+    <string name="positive_button_noodmeld">Ja</string>
+
+    <string name="positive_button_locatie">Locatie instellingen</string>
+    <string name="negative_button_locatie">Annuleren</string>
+
+    <string name="positive_button_noodoproep_locatie">OK</string>
+
+    <string name="titel_noodmeld_annuleren">Noodmelding resetten?</string>
+
+    <string name="titel_locatie_intelling">Locatie aanzetten</string>
+    <string name="titel_locatie_noodoproep">Noodoproep Locatie</string>
+
+
+    <string name="bericht_annuleren_tekst">De Noodmelding wordt gestopt en de app gereset.</string>
+    <string name="bericht_locatie_tekst">Je locatie instellingen staan uit. Zet deze aan om de app te gebruiken.</string>
+    <string name="ok_button_dialog">OK</string>
+    <string name="sluiten_button_dialog">Sluiten</string>
+    <string name="permission_button_dialog">Toestaan</string>
+    <!--  Einde Alert Dialogs -->
+
+    <!--   Toasts  -->
+    <string name="toast_noodmeld">Noodmelding verzenden…</string>
+    <string name="toast_reset">Reset uitgevoerd</string>
+    <string name="toast_geen_locatie">Noodmelding kan niet verzonden worden, geen locatie beschikbaar!</string>
+    <string name="toast_geen_rechten">App kan niet werken zonder rechten!</string>
+    <string name="toast_noodmelding_mislukt">Noodmelding mislukt!</string>
+    <string name="toast_noodmelding_beeindigd">Noodmelding beëindigd!</string>
+    <string name="toast_noodmelding_actief">Noodmelding actief!</string>
+    <!--  Einde Toasts -->
+
+    <string name="wegenwachtthegame">WegenWacht\\nTheGame®</string>
+    <string name="noodoproep">Noodoproep</string>
+    <string name="annuleren">Annuleren</string>
+    <string name="Instellingen">Instellingen</string>
+    <string name="wegenwachtauto">wegenwachtauto</string>
+    <string name="pechauto">pechauto</string>
+    <string name="noodmeldknop">noodmeldknop</string>
+    <string name="info">info</string>
+
+    <string name="easteregg">Hey goed gevonden!\nGroetjes van de ontwikkelaar,\nMaarten Lammers</string>
+
+    <string name="personeelsnummer">Personeelsnummer</string>
+    <string name="personeelsnummer_dialog">Het ingevoerde personeelsnummer is onjuist, probeer nogmaals.</string>
+    <string name="geen_personeelsnummer_dialog">Het personeelsnummer moet nog ingevuld worden.</string>
+
+    <string name="personeelsnummer_goed_dialog_title">Personeelsnummer goed!</string>
+    <string name="personeelsnummer_goed_dialog_message">Bla bla bla bla bla bla</string>
+
+    <string name="foutpersoneelsnummer">Fout in personeelsnummer.</string>
+    <string name="niet_ingevuld_personeelsnummer">Vul personeelsnummer in!</string>
+    <string name="personeelRegEx">(?=^.{7}$)([A-Za-z])(0*)(\\d{0,6})</string>
+
+    <string name="geen_permission">Geen toegang!</string>
+    <string name="geen_permission_dialog">Alle app machtigingen moeten worden toegestaan om de app te laten werken.</string>
+
+    <!-- Crash Report -->
+    <string name="crash_toast_text">Menoa is gecrashed. Er is een rapportage verstuurt naar de beheerders</string>
+
+    <string name="mannr_preference">mannr</string>
+    <string name="mannr_summary">Vul hier je man nummer in.</string>
+    <string name="foutmannr">Fout in mannr.</string>
+    <string name="mannr_fout_dialog">Het ingevoerde mannr is onjuist, probeer nogmaals.</string>
+
+    <string name="hulpverlenernummer_preference">hvnr</string>
+    <string name="personeelsnummer_summary">Vul hier je personeelsnummer nummer in.</string>
+    <string name="url_preference">url</string>
+    <string name="url_summary">Vul hier de link naar Menos in.</string>
+
+    <string name="button_reset">Resetten</string>
+    <string name="button_sluiten">Sluiten</string>
+
+</resources>

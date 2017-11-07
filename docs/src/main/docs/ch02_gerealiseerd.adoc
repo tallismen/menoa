@@ -1,0 +1,48 @@
+// Menoa SVD, chapter 2, Gerealiseerd.
+
+== Gerealiseerd
+
+=== Inleiding
+
+Dit hoofdstuk beschrijft kort welke functionele en niet-functionele
+wijzigingen in elke release zijn gerealiseerd.
+
+=== Gerealiseerd in Menoa 1.1
+
+==== Gerealiseerd in Menoa 1.1.0.1
+
+.Bug
+* App chrash bij nieuwe installatie
+
+
+==== Gerealiseerd in Menoa 1.1.0.0
+
+.Story
+* [DISSCRUM-2698] - Geluidsopname maken
+
+.Bug
+* [DISSCRUM-2927] - Dialog locatie te vaak getoont
+* [DISSCRUM-2960] - Ingevuld HV en Mannr niet zichtbaar
+* [DISSCRUM-2964] - Link naar Menos onduidelijk
+* [DISSCRUM-2927] - Locatie bericht op telefoon blijft kort staan
+
+=== Gerealiseerd in Menoa 1.0
+
+==== Gerealiseerd in Menoa 1.0.0.0
+
+.Story
+* [DISSCRUM-2695] - Noodmelding versturen
+* [DISSCRUM-2696] - Locatie kunnen registreren
+* [DISSCRUM-2806] - Adres ophalen uit lat long locatie
+* [DISSCRUM-2834] - Noodoproep versturen via xcover knop
+* [DISSCRUM-2697] - Noodmelding versturen in ontwikkelomgeving
+* [DISSCRUM-2700] - Bevestiging trillen dat de noodmelding is verzonden
+* [DISSCRUM-2704] - Vanaf lockscherm noodmelding versturen
+* [DISSCRUM-2849] - Instelbaar maken van Man nummer op preference scherm
+* [DISSCRUM-2850] - Instelbaar maken van Hv nummer op preference scherm
+
+
+.Bug
+* [DISSCRUM-2845] - Bevindingen Menoa review implementeren
+<<<
+

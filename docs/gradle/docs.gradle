@@ -1,0 +1,59 @@
+import org.ajoberstar.grgit.Grgit
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://nexus.anwb.nl/content/groups/public"}
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "org.asciidoctor:asciidoctor-gradle-plugin:1.5.3"
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.9'
+
+        classpath 'org.ajoberstar:gradle-git:1.6.0'
+    }
+}
+
+apply plugin: "org.asciidoctor.convert"
+apply plugin: org.ajoberstar.gradle.git.base.GrgitPlugin
+
+ext {
+    buildTime = new Date().format("yyyy-MM-dd HH:mm")
+
+    def grgit = Grgit.open()
+    scmUrl = grgit.remote.list().find { it.name == 'origin' }?.url
+}
+
+asciidoctor {
+    separateOutputDirs = false
+    sourceDir = file('src/main/docs')
+    sources {
+        include 'menoa-svd.adoc'
+    }
+    outputDir new File(buildDir, 'docs')
+    backends 'html5', 'pdf'
+    attributes 'source-highlighter': 'prettify',
+            icons:               'font',
+            setanchors:          'true',
+            idprefix:            '',
+            idseparator:         '-',
+            toc2:                '',
+            numbered:            '',
+            revnumber:           project.'app.build',
+            docVersion: project.'app.version',
+            docDate: buildTime,
+            scmUrl: scmUrl
+}
+
+task docs(dependsOn: asciidoctor) {
+    doLast {
+        File dir = new File(buildDir, 'docs')
+
+        ['pdf', 'epub'].each { String ext ->
+            File f = new File(dir, 'menoa-svd.' + ext)
+            if (f.exists()) {
+                f.renameTo new File(dir, 'menoa-' + project.'app.version' + '.' + ext)
+            }
+        }
+    }
+}

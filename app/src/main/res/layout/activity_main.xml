@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="nl.anwb.menoa.ui.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@color/anwbWit"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:indeterminateTint="@color/anwbOranje"
+            android:max="50" />
+
+        <Button
+            android:id="@+id/noodOproep"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_margin="50dp"
+            android:background="@drawable/button_red_round"
+            android:onClick="onNoodmeldingPressed"
+            android:text="@string/noodoproep"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:background="@color/anwbWit"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_orange"
+            android:drawableEnd="@drawable/ic_clear_white_24dp"
+            android:fontFamily="sans-serif"
+            android:onClick="onSluitenPressed"
+            android:paddingEnd="35dp"
+            android:paddingStart="35dp"
+            android:text="@string/button_sluiten"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sluitenButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_lightblue"
+            android:drawableEnd="@drawable/ic_refresh_white_24dp"
+            android:fontFamily="sans-serif"
+            android:onClick="onResetPressed"
+            android:paddingEnd="30dp"
+            android:paddingStart="30dp"
+            android:text="@string/button_reset"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

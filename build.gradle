@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://nexus.anwb.nl/content/groups/public" }
+        maven { url 'https://maven.google.com' }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.6.1'
+
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1"
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        maven { url "https://nexus.anwb.nl/content/groups/public" }
+        maven { url "https://maven.google.com" }
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

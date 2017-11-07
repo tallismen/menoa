@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="anwbGeel">#ffc500</color>
+    <color name="anwbLichtBlauw">#1f87cb</color>
+    <color name="anwbLichtBlauw2">#1a76b2</color>
+    <color name="anwbDonkerBlauw">#003d80</color>
+    <color name="anwbDonkerBlauw2">#133863</color>
+    <color name="anwbBlauw">#003d80</color>
+    <color name="colorPrimary">#003d80</color>
+    <color name="anwbZwart">#00101F</color>
+    <color name="anwbWit">#FFFFFF</color>
+    <color name="anwbRood">#ed0202</color>
+    <color name="anwbRood2">#d30202</color>
+    <color name="anwbRood3">#c40000</color>
+    <color name="anwbOranje">#f0a311</color>
+    <color name="anwbOranje2">#d18d0e</color>
+    <color name="anwbGroen">#33c64d</color>
+    <color name="anwbDisabled">#c4c4c6</color>
+</resources>

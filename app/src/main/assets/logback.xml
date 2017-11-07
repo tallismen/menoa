@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true" scan="true" scanPeriod="60 seconds">
+
+  <appender name="CONSOLE" class="ch.qos.logback.classic.android.LogcatAppender">
+    <tagEncoder>
+      <pattern>%c{0}</pattern>
+    </tagEncoder>
+    <encoder>
+      <pattern>%m%n</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>INFO</level>
+    </filter>
+  </appender>
+
+  <!--
+    - Appender that logs to a rolling file.
+    - For date pattern use a simple date pattern as follows:
+    - rollover at first day each week "'.'yyyy-ww"
+    - rollover at midnight "'.'yyyy-MM-dd"
+    - rollover at each hour "'.'yyyy-MM-dd-HH"
+    -->
+  <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>true</Append>
+    <File>/data/data/nl.anwb.menoa/files/logs/menoa.log</File>
+    <encoder>
+      <pattern>%d{ISO8601}|%-5p|%-20.20t|%-32.32c{32}|%m%n</pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>/data/data/nl.anwb.menoa/files/logs/menoa.log.%d{yyyy-MM-dd-HH}.gz</fileNamePattern>
+      <maxHistory>7</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <root level="DEBUG">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="ROLLING_FILE" />
+  </root>
+</configuration>

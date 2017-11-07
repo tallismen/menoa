@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Netwerk">
+        <EditTextPreference
+            android:autoLink="web"
+            android:autoText="false"
+            android:dialogIcon="@mipmap/info_icon"
+            android:dialogTitle="Menos Link"
+            android:elevation="1dp"
+            android:key="url"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Vul hier de link naar Menos in."
+            android:title="Menos" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Gegevens">
+        <EditTextPreference
+            android:dialogIcon="@mipmap/info_icon"
+            android:key="hvnr"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Vul hier je hulpverlener nummer in."
+            android:title="Personeelsnummer" />
+        <EditTextPreference
+            android:dialogIcon="@mipmap/info_icon"
+            android:inputType="number"
+            android:key="mannr"
+            android:numeric="integer"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Vul hier je man nummer in."
+            android:title="Man nummer" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Informatie">
+        <Preference
+            android:icon="@mipmap/alert"
+            android:key="versie"
+            android:summary=""
+            android:title="Menoa" />
+        <Preference
+            android:icon="@drawable/ic_mail_outline_24dp"
+            android:key="mailLog"
+            android:summary="Stuur de logs van de App naar beheer via email"
+            android:title="Mail logging naar Beheer" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="nl.anwb.menoa">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".MenoaApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/alert"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter android:priority="1000000">
+                <action android:name="android.speech.action.VOICE_SEARCH_HANDS_FREE" />
+                <action android:name="android.speech.action.WEB_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".ui.GameActivity"></activity>ll
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:configChanges="orientation"
+            android:label="Preferences"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
+        <service
+            android:name=".services.LocationService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service android:name=".services.MediaPlayerService">
+        </service>
+
+        <receiver
+            android:name=".widget.NoodAppWidgetProvider"
+            android:icon="@mipmap/wegenwacht"
+            android:label="WegenWachtTheGame®">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget1_info" />
+        </receiver>
+
+        <receiver android:name=".manager.BroadcastReceiverManager">
+        </receiver>
+
+    </application>
+
+</manifest>

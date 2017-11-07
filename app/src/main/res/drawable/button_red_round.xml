@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false" >
+        <shape
+            android:shape="oval">
+
+            <solid
+                android:color="@color/anwbDisabled"/>
+
+            <size
+                android:width="120dp"
+                android:height="120dp"/>
+            <stroke
+                android:width="8dp"
+                android:color="@color/anwbDisabled"
+                />
+        </shape>
+    </item>
+    <item android:state_pressed="true" >
+        <shape
+            android:shape="oval">
+
+            <solid
+                android:color="@color/anwbRood3"/>
+
+            <size
+                android:width="120dp"
+                android:height="120dp"/>
+            <stroke
+                android:width="8dp"
+                android:color="@color/anwbDisabled"
+                />
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:shape="oval">
+
+            <solid
+                android:color="@color/anwbRood2"/>
+            <gradient
+                android:centerColor="@color/anwbRood"
+                android:endColor="@color/anwbRood3"
+                android:gradientRadius="400"
+                android:startColor="@color/anwbRood2"
+                android:type="radial" >
+            </gradient>
+
+            <size
+                android:width="120dp"
+                android:height="120dp"/>
+            <stroke
+                android:width="8dp"
+                android:color="@color/anwbDisabled"
+                />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.17"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/pechauto"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/pech_auto"
+            android:contentDescription="@string/pechauto" />
+
+        <ImageView
+            android:id="@+id/wegenwachtauto"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/wegenwacht"
+            android:contentDescription="@string/wegenwachtauto" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/anwbDonkerBlauw"
+            android:textColorLink="@color/anwbDonkerBlauw"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</LinearLayout>

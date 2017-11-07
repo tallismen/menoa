@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: "org.sonarqube"
+
+def build = project.'app.build' as Integer
+def version = "${project.'app.version'}"
+def name = "${project.'app.name'}"
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile rootProject.file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "nl.anwb.menoa"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode build
+        versionName version
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+        warning 'InvalidPackage'
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+//     Optional -- Mockito framework
+    testCompile 'org.mockito:mockito-core:2.11.0'
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
+    })
+    androidTestCompile 'com.android.support:support-annotations:26.1.0'
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
+    androidTestCompile 'com.android.support.test:rules:1.0.1'
+
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'com.github.tony19:logback-android-core:1.1.1-6'
+    compile('com.github.tony19:logback-android-classic:1.1.1-6') {
+        // workaround issue #73
+        exclude group: 'com.google.android', module: 'android'
+    }
+
+    compile 'com.google.android.gms:play-services-location:11.4.2'
+    compile 'com.google.android.gms:play-services-maps:11.4.2'
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+
+    compile 'com.faendir:acra:4.10.0'
+
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+}
+
+
+//sonarqube {
+//    properties {
+//        property "sonar.projectKey", "nl.anwb.hv:menoa"
+//        property "sonar.projectName", name
+//        //property "sonar.branch", branch
+//        property "sonar.host.url", "http://jenkins-hv:9000"
+//        property "sonar.sourceEncoding", "UTF-8"
+//    }
+//}
+
